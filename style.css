@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+body {
+    width: 100%;
+}
+:root {
+    --bg-color: #333545;
+    --bg-color1:rgb(156, 154, 154);
+}
+/************************general css*********************************************/
+.container{
+    max-width: 1440px;
+    padding: 0 3rem;
+    margin: 0 auto;
+}
+/******************************** Start of first header*****************************/
+.first_head {
+    background-color: var(--bg-color) ;
+    height: 4rem;
+}
+.first_header {
+    padding: 1rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.left_nav,.left_nav_search,.right_nav,.right_nav_rest{
+    display: flex;
+}
+.left_nav{
+    gap: 1.3rem;
+}
+.right_nav{
+    justify-content: center;
+    gap: 1.5rem;
+}
+.right_nav_rest{
+    justify-content: center;
+    gap: 1rem;
+}
+ .left_nav_logo{
+    width: 120px;
+    height: 40px;
+}
+.left_nav_search{
+    display: flex;
+    align-items: center;
+    min-width: 150%;
+    height: 50%;
+    padding:0rem .5rem;
+    border-radius: 5px;
+    background-color: white;
+}
+.search_bar{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: .7rem;
+    font-size: initial;
+}
+.search_bar::placeholder{
+    color: var(--bg-color1);
+}
+.fa-magnifying-glass{
+    color: var(--bg-color1);
+    font-size: 1rem;
+}
+.sign_btn{
+    padding: .3rem .7rem;
+    background-color: #f84464;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: .9rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.right_nav_city{
+    font-size: 1rem;
+}
+.right_nav_city span{
+    color: #cccccc;
+}
+.fa-bars{
+    font-size: 1.5rem;
+}
+
+/********************************************************SIGNIN POP UP*****************************************/
+.sign_pop_up{
+    padding: 1rem 2rem;
+    height: 70vh;
+    width: 26%;
+    box-shadow: 0px 0px 5px rgb(108, 107, 107);
+    margin: 3rem auto;
+    border-radius: 5px;
+    display: none;
+}
+.modalclose{
+    display: flex;
+    justify-content: flex-end;
+}
+.fa-xmark{
+    font-size: 1.3rem;
+    color: rgb(134, 132, 132);
+}
+.sign_pop_up p{
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.sign_box{
+    border: 1px solid #ccc;
+    padding: .8rem;
+    margin-bottom: 1.5rem;
+    font-size: .9rem;
+    font-weight: bold;
+    word-spacing: 1px;
+    color: rgb(54, 53, 53);
+    border-radius: 5px;
+}
+.sign_box span{
+    margin-left: 3rem;
+    color: #828080;
+}
+.fa-apple{
+    font-size: 1.3rem;
+}
+.pop_text{
+    font-size: .8rem;
+    color: #535252;
+}
+.sign_pop_up .phone_num{
+width: 80%;
+border: none;
+outline: none;
+font-size: .9rem;
+border-bottom: 1px solid var(--bg-color1);
+}
+.phone_num::placeholder{
+    color: var(--bg-color1);
+}
+.sign_pop_up .terms{
+    font-size: .8rem;
+    margin-top: 2rem;
+    color: var(--bg-color1);
+}
+.sign_pop_up .terms a{
+    text-decoration: underline;
+    color: var(--bg-color1);
+}
+.height{
+    height: 5rem;
+}
+.continue{
+    width: 100%;
+    padding: 1rem;
+    background-color: #d0cdcd;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    /* margin-top: 5rem; */
+    display: none;
+}
+/********************************************************CITY POPUP********************************************/
+.city_pop_up{
+    padding: 1rem 2rem;
+    height: 65vh;
+    width: 65%;
+    box-shadow: 0px 0px 5px rgb(108, 107, 107);
+    margin: -3px auto;
+    background-color: white;
+    /* display: none; */
+}
+.city_pop_search{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid #dfdbdb;
+    padding: .2rem .7rem;
+}
+.city_bar::placeholder{
+    font-size: .8rem;
+}
+.city_pop_up p{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: .9rem;
+}
+
+.city_list{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: .9rem;
+}
+.city_list img{
+    width: 80%;
+}
+.other_city{
+    display: flex;
+    justify-content: space-between;
+    height: 15vh;
+    
+}
+.other_city{
+    overflow-y: auto;
+}
+.other_city::-webkit-scrollbar{
+    display: none;
+}
+.other_city a{
+    font-size: .7rem;
+    line-height: 1rem;
+    color: rgb(176, 173, 173);
+}
+.other_city a:hover{
+    color: rgb(80, 79, 79);
+}
+.hide{
+    color:rgb(219, 8, 8);
+}
+/***************************************************JS************************************************************/
+.display_block{
+    display: block;
+}
+.display_none{
+    display: none;
+}
