@@ -12,20 +12,21 @@ body {
 :root {
     --bg-color: #333545;
     --bg-color1:rgb(156, 154, 154);
+    --bg-color2: #cccccc;
 }
 /************************general css*********************************************/
 .container{
     max-width: 1440px;
-    padding: 0 3rem;
+    padding: 0 3.5rem;
     margin: 0 auto;
 }
 /******************************** Start of first header*****************************/
 .first_head {
     background-color: var(--bg-color) ;
-    height: 4rem;
+    position: relative;
 }
 .first_header {
-    padding: 1rem 0rem;
+    padding: .8rem 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +34,7 @@ body {
 }
 .left_nav,.left_nav_search,.right_nav,.right_nav_rest{
     display: flex;
+    align-items: center;
 }
 .left_nav{
     gap: 1.3rem;
@@ -43,7 +45,22 @@ body {
 }
 .right_nav_rest{
     justify-content: center;
+    gap: 1.2rem;
+}
+.right_nav_rest1{
+    /* display: flex; */
+    justify-content: center;
     gap: 1rem;
+    align-items: center;
+    display: none;
+}
+.user_icon{
+background-color: white;
+padding: .5rem;
+border-radius: 50%;
+}
+.fa-user{
+    color: black;
 }
  .left_nav_logo{
     width: 120px;
@@ -86,21 +103,23 @@ body {
     font-size: 1rem;
 }
 .right_nav_city span{
-    color: #cccccc;
+    color: var(--bg-color2);
 }
 .fa-bars{
     font-size: 1.5rem;
 }
 
 /********************************************************SIGNIN POP UP*****************************************/
-.sign_pop_up{
+.sign_pop_up,.sign_pop_up1{
     padding: 1rem 2rem;
-    height: 70vh;
     width: 26%;
     box-shadow: 0px 0px 5px rgb(108, 107, 107);
-    margin: 3rem auto;
+    position: absolute;
+    top: 6rem;
+    left: 37%;
     border-radius: 5px;
     display: none;
+    background-color: white;
 }
 .modalclose{
     display: flex;
@@ -115,7 +134,7 @@ body {
     margin-bottom: 2.5rem;
 }
 .sign_box{
-    border: 1px solid #ccc;
+    border: 1px solid rgb(182, 181, 181);
     padding: .8rem;
     margin-bottom: 1.5rem;
     font-size: .9rem;
@@ -123,6 +142,9 @@ body {
     word-spacing: 1px;
     color: rgb(54, 53, 53);
     border-radius: 5px;
+}
+.sign_box:hover{
+    background-color: #eee9e9;
 }
 .sign_box span{
     margin-left: 3rem;
@@ -166,18 +188,79 @@ border-bottom: 1px solid var(--bg-color1);
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
-    /* margin-top: 5rem; */
     display: none;
+    cursor: pointer;
+}
+.continue1{
+    width: 100%;
+    padding: 1rem;
+    background-color:#f84464;
+    opacity: .2;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.otp_box_container{
+    display: flex;
+    justify-content: left;
+    gap: .5rem;
+}
+.otp_box{
+    width: 12%;
+    height: 2.5rem;
+    padding: .5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline-color: #f84464;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    /* transition: all 0.1s; */
+}
+.invalid_msg{
+    margin-bottom: 14rem;
+    color: #f84464;
+    font-size: .7rem;
+}
+.rcv_otp{
+    text-align: center;
+    font-size: .7rem;
+}
+.resnd_otp{
+    color: #f84464;
+    cursor: pointer;
+}
+.leftchevro_icon{
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
+}
+.sign_pop_up1 h3{
+    font-size: 1.5rem;
+    color: rgb(53, 52, 52);
+}
+.sign_pop_up1 p{
+    color: rgb(101, 101, 101);
+    font-size: .9rem;
+    margin-top: .5rem;
+    margin-bottom: 1.3rem;
 }
 /********************************************************CITY POPUP********************************************/
 .city_pop_up{
     padding: 1rem 2rem;
-    height: 65vh;
     width: 65%;
     box-shadow: 0px 0px 5px rgb(108, 107, 107);
-    margin: -3px auto;
+    /* margin: -3px auto; */
     background-color: white;
-    /* display: none; */
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 4rem;
+    left:17rem;
 }
 .city_pop_search{
     display: flex;
@@ -209,7 +292,9 @@ border-bottom: 1px solid var(--bg-color1);
     display: flex;
     justify-content: space-between;
     height: 15vh;
-    
+}
+.lowerpart_city{
+    display: none;
 }
 .other_city{
     overflow-y: auto;
@@ -228,10 +313,59 @@ border-bottom: 1px solid var(--bg-color1);
 .hide{
     color:rgb(219, 8, 8);
 }
+.view{
+    color:rgb(219, 8, 8);
+}
+/************************************************SECOND HEADER****************************************************/
+.second_head{
+    background-color: #222539;
+    padding: .7rem;
+}
+.second_header_content{
+    display: flex;
+    justify-content: space-between;
+}
+.left_secHd_anchr{
+    color: rgb(173, 172, 172);
+    font-size: .8rem;
+    font-weight: 600;
+}
+.left_secHd_anchr:hover{
+    color: white;
+}
+.right_secHd_anchr{
+    color: white;
+    font-size: .8rem;
+}
+.newSup{
+    font-size: .5rem;
+    color: #f84464;
+}
+.left_second_head{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.right_second_head{
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+}
+/******************************************************MAIN*******************************************************/
+main{
+    height: 100vh;
+}
 /***************************************************JS************************************************************/
 .display_block{
     display: block;
 }
 .display_none{
     display: none;
+}
+.background_red{
+    background-color: #f84464;
+}
+.display_flex{
+    display: flex;
 }
