@@ -21,11 +21,11 @@ body {
     margin: 0 auto;
 }
 /******************************** Start of first header*****************************/
-.first_head {
+.nav_first_head {
     background-color: var(--bg-color) ;
     position: relative;
 }
-.first_header {
+.nav_first_header {
     padding: .8rem 3.5rem;
     display: flex;
     justify-content: space-between;
@@ -54,12 +54,12 @@ body {
     align-items: center;
     display: none;
 }
-.user_icon{
+.right_nav_rest1 .user_icon{
 background-color: white;
 padding: .5rem;
 border-radius: 50%;
 }
-.fa-user{
+.right_nav_rest1 .fa-user{
     color: black;
 }
  .left_nav_logo{
@@ -89,7 +89,7 @@ border-radius: 50%;
     color: var(--bg-color1);
     font-size: 1rem;
 }
-.sign_btn{
+.right_nav_rest .sign_btn{
     padding: .3rem .7rem;
     background-color: #f84464;
     color: white;
@@ -105,7 +105,7 @@ border-radius: 50%;
 .right_nav_city span{
     color: var(--bg-color2);
 }
-.fa-bars{
+.right_nav_rest .fa-bars{
     font-size: 1.5rem;
 }
 
@@ -120,12 +120,13 @@ border-radius: 50%;
     border-radius: 5px;
     display: none;
     background-color: white;
+    z-index: 1000;
 }
-.modalclose{
+.sign_pop_up .modalclose{
     display: flex;
     justify-content: flex-end;
 }
-.fa-xmark{
+.sign_pop_up .fa-xmark{
     font-size: 1.3rem;
     color: rgb(134, 132, 132);
 }
@@ -150,10 +151,10 @@ border-radius: 50%;
     margin-left: 3rem;
     color: #828080;
 }
-.fa-apple{
+.sign_box .fa-apple{
     font-size: 1.3rem;
 }
-.pop_text{
+.sign_pop_up .pop_text{
     font-size: .8rem;
     color: #535252;
 }
@@ -164,7 +165,7 @@ outline: none;
 font-size: .9rem;
 border-bottom: 1px solid var(--bg-color1);
 }
-.phone_num::placeholder{
+.sign_pop_up .phone_num::placeholder{
     color: var(--bg-color1);
 }
 .sign_pop_up .terms{
@@ -176,7 +177,7 @@ border-bottom: 1px solid var(--bg-color1);
     text-decoration: underline;
     color: var(--bg-color1);
 }
-.height{
+.sign_pop_up .height{
     height: 5rem;
 }
 .continue{
@@ -204,7 +205,7 @@ border-bottom: 1px solid var(--bg-color1);
     cursor: pointer;
 }
 
-.otp_box_container{
+.sign_pop_up1 .otp_box_container{
     display: flex;
     justify-content: left;
     gap: .5rem;
@@ -222,12 +223,12 @@ border-bottom: 1px solid var(--bg-color1);
     text-align: center;
     /* transition: all 0.1s; */
 }
-.invalid_msg{
+.sign_pop_up1 .invalid_msg{
     margin-bottom: 14rem;
     color: #f84464;
     font-size: .7rem;
 }
-.rcv_otp{
+.sign_pop_up1 .rcv_otp{
     text-align: center;
     font-size: .7rem;
 }
@@ -235,7 +236,7 @@ border-bottom: 1px solid var(--bg-color1);
     color: #f84464;
     cursor: pointer;
 }
-.leftchevro_icon{
+.sign_pop_up1 .leftchevro_icon{
     margin-top: 1rem;
     margin-bottom: 3.5rem;
 }
@@ -261,6 +262,7 @@ border-bottom: 1px solid var(--bg-color1);
     position: absolute;
     top: 4rem;
     left:17rem;
+    z-index: 1000;
 }
 .city_pop_search{
     display: flex;
@@ -310,44 +312,44 @@ border-bottom: 1px solid var(--bg-color1);
 .other_city a:hover{
     color: rgb(80, 79, 79);
 }
-.hide{
+.lowerpart_city .hide{
     color:rgb(219, 8, 8);
 }
-.view{
+.city_pop_up .view{
     color:rgb(219, 8, 8);
 }
 /************************************************SECOND HEADER****************************************************/
-.second_head{
+.nav_second_head{
     background-color: #222539;
     padding: .7rem;
 }
-.second_header_content{
+.nav_second_header_content{
     display: flex;
     justify-content: space-between;
 }
-.left_secHd_anchr{
+.nav_left_secHd_anchr{
     color: rgb(173, 172, 172);
     font-size: .8rem;
     font-weight: 600;
 }
-.left_secHd_anchr:hover{
+.nav_left_secHd_anchr:hover{
     color: white;
 }
-.right_secHd_anchr{
+.nav_right_secHd_anchr{
     color: white;
     font-size: .8rem;
 }
-.newSup{
+.nav_newSup{
     font-size: .5rem;
     color: #f84464;
 }
-.left_second_head{
+.nav_left_second_head{
     width: 30%;
     display: flex;
     justify-content: space-between;
     
 }
-.right_second_head{
+.nav_right_second_head{
     display: flex;
     width: 25%;
     justify-content: space-between;
