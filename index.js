@@ -15,6 +15,7 @@ const otpBox=document.querySelectorAll(".otp_box");
 const invalidMsg=document.querySelector(".invalid_msg");
 const rightNavRest=document.querySelector(".right_nav_rest");
 const rightNavRest1=document.querySelector(".right_nav_rest1");
+
 let sentOtp;
 
 signButton.addEventListener("click",()=>{
@@ -49,11 +50,12 @@ continueBox.addEventListener("click",()=>{
    signPopUp.classList.add("display_none");
    signPopUpVerify.classList.add("display_block");
     phoneNumVerify.innerText=phoneNumber.value;
+    setTimeout(()=>generateOtp(),500); //to genarate otp
 })
 
 //----------------------------------------GENERATE OTP----------------------------------------------------
 
-phoneNumVerify.addEventListener("click",generateOtp);
+
 resendOtp.addEventListener("click",generateOtp);
 
 function generateOtp(){
@@ -97,8 +99,10 @@ function generateOtp(){
         console.log(sentOtp);
 
         if(enterOtp!==sentOtp){
-            setTimeout
             invalidMsg.innerText="invalid otp entered.Please try again";
+            otpBox.forEach((input)=>{
+                input.value="";
+            })
         } else{
             signPopUpVerify.classList.remove("display_block");
             rightNavRest.classList.add("display_none");
@@ -120,9 +124,11 @@ const hideCity=document.querySelector(".hide");
 const viewCity=document.querySelector(".view");
 const lowerpartCity=document.querySelector(".lowerpart_city");
 const rightNavCityOption=document.querySelector(".right_nav_city");
+const rightNavCityOptionPhone=document.querySelector(".right_nav_city1");
 const cityPopUp=document.querySelector(".city_pop_up");
 const mainBody=document.querySelector("main");
 const cityName=document.querySelector(".city_name");
+const cityName1=document.querySelector(".city_name1");
 
 viewCity.addEventListener("click",()=>{
   lowerpartCity.classList.add("display_block");
@@ -138,6 +144,7 @@ rightNavCityOption.addEventListener("click",()=>{
    cityPopUp.classList.add("display_block");
 })
 
+
 mainBody.addEventListener("click",()=>{
     cityPopUp.classList.remove("display_block");
 })
@@ -150,3 +157,19 @@ cityPopUp.addEventListener("click",(event)=>{
         cityName.innerText=event.target.alt;
         }
 })
+
+//--------------------------------------------FOR PHONE VIEW----------------------------------------------------
+
+rightNavCityOptionPhone.addEventListener("click",()=>{
+    cityPopUp.classList.add("display_block");
+})
+
+cityPopUp.addEventListener("click",(event)=>{
+    if(event.target.classList.contains("cityTrans")){
+    cityName1.innerText=event.target.innerText;
+    }
+    else if(event.target.classList.contains("cityimg")){
+        cityName1.innerText=event.target.alt;
+        }
+})
+
