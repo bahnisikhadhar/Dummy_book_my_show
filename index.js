@@ -173,3 +173,46 @@ cityPopUp.addEventListener("click",(event)=>{
         }
 })
 
+
+
+
+//---------------------------------------Signin with Google-----------------------------------------------------
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { GoogleAuthProvider, getAuth, signInWithRedirect, getRedirectResult, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyAw9njQdmjj9CQsP88oTNkF_NC9gdoKNt0",
+    authDomain: "auth-54ab3.firebaseapp.com",
+    projectId: "auth-54ab3",
+    storageBucket: "auth-54ab3.appspot.com",
+    messagingSenderId: "1026883799189",
+    appId: "1:1026883799189:web:f273ec6a236b747eb9339c"
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const provider = new GoogleAuthProvider(app);
+const auth = getAuth(app);
+const googleBtn = document.getElementById("google_btn")
+googleBtn.addEventListener("click", (e) => {
+    signInWithRedirect(auth, provider);
+    getRedirectResult(auth)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access Google APIs.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+        });
+})
