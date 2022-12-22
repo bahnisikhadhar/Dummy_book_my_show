@@ -21,11 +21,11 @@ body {
     margin: 0 auto;
 }
 /******************************** Start of first header*****************************/
-.nav_first_head {
+.nav_first_head,.nav_first_head1 {
     background-color: var(--bg-color) ;
     position: relative;
 }
-.nav_first_header {
+.nav_first_header,.nav_first_header1 {
     padding: .8rem 3.5rem;
     display: flex;
     justify-content: space-between;
@@ -37,21 +37,21 @@ body {
     align-items: center;
 }
 .left_nav{
-    gap: 1.3rem;
+    width: 60%;
+    justify-content: space-between;
 }
 .right_nav{
-    justify-content: center;
-    gap: 1.5rem;
+    width: 17%;
+    justify-content: space-between;
+    cursor: pointer;
 }
-.right_nav_rest{
-    justify-content: center;
-    gap: 1.2rem;
+.right_nav_rest,.right_nav_rest1{
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
 }
 .right_nav_rest1{
-    /* display: flex; */
-    justify-content: center;
-    gap: 1rem;
-    align-items: center;
+    width: 50%;
     display: none;
 }
 .right_nav_rest1 .user_icon{
@@ -69,8 +69,7 @@ border-radius: 50%;
 .left_nav_search{
     display: flex;
     align-items: center;
-    min-width: 150%;
-    height: 50%;
+    width: 80%;
     padding:0rem .5rem;
     border-radius: 5px;
     background-color: white;
@@ -89,7 +88,7 @@ border-radius: 50%;
     color: var(--bg-color1);
     font-size: 1rem;
 }
-.right_nav_rest .sign_btn{
+.right_nav_rest .btn,.right_nav1 .btn{
     padding: .3rem .7rem;
     background-color: #f84464;
     color: white;
@@ -108,6 +107,7 @@ border-radius: 50%;
 .right_nav_rest .fa-bars{
     font-size: 1.5rem;
 }
+
 
 /********************************************************SIGNIN POP UP*****************************************/
 .sign_pop_up,.sign_pop_up1{
@@ -255,13 +255,12 @@ border-bottom: 1px solid var(--bg-color1);
     padding: 1rem 2rem;
     width: 65%;
     box-shadow: 0px 0px 5px rgb(108, 107, 107);
-    /* margin: -3px auto; */
     background-color: white;
     cursor: pointer;
     display: none;
     position: absolute;
     top: 4rem;
-    left:17rem;
+    left:16%;
     z-index: 1000;
 }
 .city_pop_search{
@@ -284,6 +283,7 @@ border-bottom: 1px solid var(--bg-color1);
 .city_list{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     text-align: center;
     font-size: .9rem;
 }
@@ -347,12 +347,14 @@ border-bottom: 1px solid var(--bg-color1);
     width: 30%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     
 }
 .nav_right_second_head{
     display: flex;
     width: 25%;
     justify-content: space-between;
+    /* align-items: center; */
 }
 /******************************************************MAIN*******************************************************/
 main{
@@ -370,4 +372,84 @@ main{
 }
 .display_flex{
     display: flex;
+}
+
+/****************************************For Phone************************************************/
+.right_nav1{
+    display: flex;
+    width: 17%;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_first_head1{
+    display: none;
+}
+main{
+    position: relative;
+}
+.below_bar{
+    width: 100%;
+   padding:1rem 1.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+    z-index: 1000;
+    display: none;
+}
+.below_bar h1{
+    font-size: 1rem;
+}
+.below_bar span{
+    font-size: .6rem;
+}
+.below_bar_img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+/***************************************************MEDIA QUERY*************************************************/
+
+@media (min-width: 750px) and (max-width:1140px){
+    .right_nav_rest,.right_nav_rest1{
+        width: 60%;
+    }
+    .right_nav{
+        width: 30%;
+    }
+    .nav_left_second_head{
+        width: 50%;
+    }
+    .nav_right_second_head{
+        width: 40%;
+    }
+    .container{
+        padding: 0rem 1.5rem;
+    }
+}
+
+@media (min-width: 0px) and (max-width:750px){
+    .container{
+        padding: 0rem 1.5rem;
+    }
+    .nav_first_head,.nav_second_head{
+        display: none;
+    }
+    .nav_first_head1{
+        padding: 1rem 0rem;
+        display: block;
+    }
+    .city_pop_up{
+        width: 100%;
+        flex-wrap: wrap;
+        left: 0;
+    }
+    .below_bar{
+        display: flex;
+    }
+    
 }
