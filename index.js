@@ -75,7 +75,7 @@ function generateOtp(){
   });
 
   function handleOtp(event){
-    // console.log(event.target.value);
+    console.log(event.target.value);
     const input=event.target;
     let value=input.value;
     input.value="";
